@@ -1,0 +1,48 @@
+{% extends "AppTrans/base.html" %}
+{% block body_block %}
+
+<div class="jumbotron">
+    <h3> Fill out the Form</h3>
+
+  <form enctype="multipart/form-data" name="myform" method="post" onsubmit=" return checkcatdata()" >
+        {% csrf_token %}
+        <label for="category">Category:</label>
+        <input type="text" name="category" placeholder="Enter Category">
+        <p><input type="submit" class="btn btn-primary" name="" value="Add Category">
+    </form>
+</div>
+<script>
+    function checkcatdata()
+    {
+            var cate=document.myform.category;
+
+            var catego = document.myform.category.value;
+            alert(catego);
+
+
+            var cat =    /^[a-zA-Z0-9\s]{1,}$/;
+
+            var catstatus = cat.exec(catego);
+
+
+             if (!catstatus)
+             	     {
+                        alert("Category should be minimum 1 character long and  can contain letters,digits and spaces only");
+                        cate.focus();
+                        return false;
+                      }
+
+              else
+                    {
+                      return true;
+                    }
+
+
+
+     }
+
+
+
+
+</script>
+{% endblock %}

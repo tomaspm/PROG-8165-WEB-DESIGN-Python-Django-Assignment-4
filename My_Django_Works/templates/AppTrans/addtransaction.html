@@ -1,0 +1,61 @@
+{% extends "AppTrans/base.html" %}
+{% block body_block %}
+
+<div class="jumbotron">
+  <h1>Transaction Page</h1>
+  <form enctype="multipart/form-data" name="myform" method="post" onsubmit=" return checktransdata()">
+        {% csrf_token %}
+        <p><label for="dateoftrans">Transaction Date :</label>
+        <input type="date" placeholder="Date" name="dateoftrans"><p>
+        <p><label for="description">Description :</label>
+        <input type="text" placeholder="Description"  name="description"><p>
+        <p><label for="transcategory">Transaction Category :</label>
+        <select  name="transcategory">
+            {% if categ  %}
+                {% for rec in categ %}
+                  <option>{{ rec.category }}</option>
+                {% endfor %}
+            {% endif %}
+        </select><p>
+        <p><label for="amount">Amount :</label>
+        <input type="text" placeholder="Amount"  name="amount"><p>
+        <p><input type="submit" class="btn btn-primary" name="" value="Add Transaction">
+    </form>
+</div>
+
+<script>
+    function checktransdata()
+    {
+            var desc=document.myform.description;
+
+            var descp = document.myform.description.value;
+            alert(descp);
+
+
+            var des =    /^[a-zA-Z0-9\s]{0,}$/;
+
+            var descstatus = des.exec(descp);
+
+
+             if (!descstatus)
+             	     {
+                        alert("Description can contain letters,digitas and spaces only");
+                        desc.focus();
+                        return false;
+                      }
+
+              else
+                    {
+                      return true;
+                    }
+
+
+
+     }
+
+
+
+
+</script>
+
+{% endblock %}

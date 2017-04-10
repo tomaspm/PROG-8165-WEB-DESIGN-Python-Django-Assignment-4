@@ -1,0 +1,67 @@
+{% extends "AppTrans/base.html" %}
+{% block body_block %}
+{% load staticfiles %}
+<div class="jumbotron">
+
+
+  {% if registered %}
+    <h1>Thank you for registering!</h1>
+  {% else %}
+    <h1> Regsiter Here!</h1>
+    <h3> Fill out the Form</h3>
+    <form enctype="multipart/form-data" name="myform" method="post" onsubmit=" return checkdata()">
+      {% csrf_token %}
+      {{ user_form.as_p }}
+      <input type="submit" class="btn btn-primary" name="" value="Register">
+      <p id="errmsg"></p>
+    </form>
+  {% endif %}
+
+</div>
+<script>
+    function checkdata()
+    {
+            var uname=document.myform.username;
+            var pwd=document.myform.password;
+            var usename = document.myform.username.value;
+            var passd=document.myform.password.value;
+            var un = /^[a-zA-Z0-9\-]{5,}$/;
+
+
+            var pw=/^[a-zA-Z0-9\^\-\_\$\/\/]{4,}$/;
+
+
+            var usernamestatus = un.exec(usename);
+	          var pwdstatus = pw.exec(passd);
+
+             if (!usernamestatus || !pwdstatus )
+             	 {
+
+                 if (!usernamestatus)
+                    {
+                        alert("User name must be minimum 5 characters long..It can contain letters,digitas and dashes only");
+                        uname.focus();
+                        return false;
+                      }
+                if (!pwdstatus)
+                     {
+                        alert("Password must be minimum 4 characters long..It can contain letters,digitas and ^  -  _  $  /  \ only");
+                        pwd.focus();
+                        return false;
+                       }
+
+                   }
+              else
+                    {
+                      return true;
+                    }
+
+
+
+     }
+
+
+
+
+</script>
+{% endblock %}
