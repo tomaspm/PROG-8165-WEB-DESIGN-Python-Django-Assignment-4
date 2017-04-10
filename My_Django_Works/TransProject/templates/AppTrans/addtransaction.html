@@ -1,0 +1,23 @@
+{% extends "AppTrans/base.html" %}
+{% block body_block %}
+
+<div class="jumbotron">
+  <h1>Transaction Page</h1>
+  <form enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        <p><label for="dateoftrans">Transaction Date :</label>
+        <input type="date" placeholder="Date" name="dateoftrans"><p>
+        <p><label for="description">Description :</label>
+        <input type="text" placeholder="Description"  name="description"><p>
+        <p><select  name="transcategory">
+              <option value="Transaction Mode">Transaction Mode</option>
+              <option value= "Debit">Debit</option>
+              <option value= "Credit">Credit</option>
+        </select><p>
+        <p><label for="amount">Amount :</label>
+        <input type="text" placeholder="Amount"  name="amount"><p>
+        <p><input type="submit" class="btn btn-primary" name="" value="Add Transaction">
+    </form>
+</div>
+
+{% endblock %}

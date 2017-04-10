@@ -1,0 +1,26 @@
+{% extends "AppTrans/base.html" %}
+{% block body_block %}
+
+<div class="jumbotron">
+  {% if trans %}
+  <table>
+    <thead>
+      <th>Date of Transaction</th>
+      <th>Description</th>
+      <th>Transaction Category</th>
+      <th>Amount</th>
+    </thead>
+    {% for rec in trans %}
+      <tr>
+        <td>{{ rec.dateoftrans }}</td>
+        <td> {{ rec.description }} </td>
+        <td> {{ rec.transcategory}} </td>
+        <td> {{ rec.amount}} </td>
+      </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+  <p> No Transaction records found!</p>
+  {% endif %}
+</div>
+{% endblock %}

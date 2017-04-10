@@ -1,0 +1,14 @@
+{% extends "AppTrans/base.html" %}
+{% block body_block %}
+
+<div class="jumbotron">
+    <h3> Fill out the Form</h3>
+
+  <form enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        <label for="category">Category:</label>
+        <input type="text" name="category" placeholder="Enter Category">
+        <p><input type="submit" class="btn btn-primary" name="" value="Add Category">
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,111 @@
+html {
+	background-color: lightblue;
+}
+body  {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+h2{
+	color:blue;
+}
+
+.loginbox
+{
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+	width: 1000px;
+	background-color: lightblue;
+	margin: 375px auto;
+	margin-top:325px
+	padding: 10px;
+	border: 2px solid red;
+  box-shadow: 0 9px 18px 9px;
+  margin-bottom: 10px;
+}
+.submitalign
+{
+	align:center;
+}
+.registerbox
+{
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  position:relative;
+	margin-top:5px;
+  margin-bottom:250px;
+  text-align: center;
+
+
+}
+p
+{
+  text-align: center;
+	margin-top:20px;
+
+
+}
+
+.ip{
+     height: 30px;
+     width: 200px;
+
+   }
+   .err
+   {
+	    font-weight: bold;
+		font-size: 13px;
+		color: red;
+
+   }
+
+.btnExample {
+  color: #900;
+  background: #FF0;
+  width: 200px;
+  height: 25px;
+  font-weight: bold;
+  border: 1px solid #900;
+
+}
+.btnExample:hover {
+ border-color: #F00 #C30 #C30 #F00;
+}
+
+
+
+a:hover, a:active {
+    background-color: red;
+}
+
+.header
+{
+  position:fixed;
+
+  overflow-x: hidden;
+  width:100%;
+  height:100px;
+  background-color: gray;
+	margin-top:20px;
+}
+.footer
+{
+    position:relative;
+  overflow-x: hidden;
+  margin:0px;
+  padding:0px:
+  width:100%
+  height:50px;
+  background-color: gray;
+	color: blue;
+  top: 1000px;
+
+
+}
+
+nav
+{
+position:fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 30px;
+  text-align: right;
+}
